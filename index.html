@@ -1,108 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE REAL RISE</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>THE REAL RISE</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
 
-        body {
-            background-color: #111;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-            text-align: center;
-        }
+    body {
+      background-color: #0B0C10;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
 
-        .header {
-            margin-bottom: 30px;
-        }
+    .header {
+      margin-bottom: 30px;
+    }
 
-        .title {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
+    .logo {
+      width: 100px;
+      margin-bottom: 15px;
+    }
 
-        .welcome {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      position: relative;
+    }
 
-        .tagline {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: #ccc;
-        }
+    .title span {
+      position: relative;
+    }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            width: 100%;
-            max-width: 1000px;
-        }
+    .title span::before {
+      content: "🌴🌴🌴";
+      position: absolute;
+      top: -25px;
+      left: 0;
+    }
 
-        .feature-box {
-            background-color: #222;
-            padding: 30px;
-            border-radius: 10px;
-            transition: transform 0.3s, background-color 0.3s;
-            cursor: pointer;
-        }
+    .welcome {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
 
-        .feature-box:hover {
-            transform: translateY(-10px);
-            background-color: #333;
-        }
+    .tagline {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: #ccc;
+    }
 
-        .feature-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+    }
 
-        @media (max-width: 768px) {
-            .title {
-                font-size: 2rem;
-            }
-            .welcome {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+    .feature-box {
+      background-color: #14532D;
+      padding: 30px;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-10px);
+      background-color: #166534;
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2rem;
+      }
+      .welcome {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <div class="title">THE REAL RISE</div>
-        <div class="welcome">WELCOME TO THE REAL RISE</div>
-        <div class="tagline">Built from hustle. Powered by vision.</div>
-    </div>
+  <div class="header">
+    <img src="your-logo-file.png" alt="The Real Rise Logo" class="logo" />
+    <div class="title">THE REAL <span>RISE</span></div>
+    <div class="welcome">WELCOME TO THE REAL RISE</div>
+    <div class="tagline">Built from hustle. Powered by vision.</div>
+  </div>
 
-    <div class="features">
-        <div class="feature-box">
-            <div class="feature-title">MOTIVATION CORNER</div>
-        </div>
-        <div class="feature-box">
-            <div class="feature-title">HUSTLE ACADEMY</div>
-        </div>
-        <div class="feature-box">
-            <div class="feature-title">DESIGN SERVICES</div>
-        </div>
-        <div class="feature-box">
-            <div class="feature-title">EGG BUSINESS</div>
-        </div>
-    </div>
+  <div class="features">
+    <div class="feature-box"><div class="feature-title">MOTIVATION CORNER</div></div>
+    <div class="feature-box"><div class="feature-title">HUSTLE ACADEMY</div></div>
+    <div class="feature-box"><div class="feature-title">DESIGN SERVICES</div></div>
+    <div class="feature-box"><div class="feature-title">EGG BUSINESS</div></div>
+  </div>
 </body>
 </html>
