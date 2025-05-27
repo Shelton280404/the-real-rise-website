@@ -12,95 +12,90 @@
       font-family: 'Arial', sans-serif;
     }
 
-    body {
-      background: url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0d3') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      min-height: 100vh;
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      background: url('intro-bg.jpg') no-repeat center center/cover;
+      height: 100vh;
+      width: 100vw;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      padding: 20px;
+      align-items: center;
       text-align: center;
-    }
-
-    .header {
-      margin-bottom: 20px;
-      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
       padding: 20px;
-      border-radius: 10px;
     }
 
-    .small-text {
-      font-size: 1rem;
-      color: #fff;
-      margin-bottom: 5px;
+    .hero .small-text {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
 
-    .title {
+    .hero .main-title {
       font-size: 3rem;
       font-weight: bold;
-      color: white;  /* Changed from gold to white */
-      margin-bottom: 5px;
+      color: white;
+      margin-bottom: 10px;
     }
 
-    .tagline {
+    .hero .tagline {
       font-size: 1rem;
       color: #ccc;
+      margin-bottom: 40px;
     }
 
-    .features {
+    .buttons {
       display: flex;
-      overflow-x: auto;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 15px;
-      padding: 10px;
-      width: 100%;
-      max-width: 1000px;
-      margin-top: 30px;
-    }
-
-    .feature-box {
-      min-width: 220px;
-      background-color: gold;
       padding: 20px;
-      border-radius: 25px;
-      flex-shrink: 0;
-      transition: transform 0.3s;
+      background-color: #111;
     }
 
-    .feature-box:hover {
-      transform: translateY(-8px);
-    }
-
-    .feature-title {
+    .button {
+      background-color: #FFD700;
       color: white;
-      font-size: 1.3rem;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
       font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
     }
 
-    @media (orientation: portrait) {
-      .features {
-        flex-direction: column;
-        align-items: center;
+    .button:hover {
+      background-color: #e6c200;
+    }
+
+    @media (max-width: 768px) {
+      .hero .main-title {
+        font-size: 2rem;
       }
-      .feature-box {
-        width: 90%;
+
+      .button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="header">
+  <section class="hero">
     <div class="small-text">Welcome to</div>
-    <div class="title">THE REAL RISE</div>
+    <div class="main-title">THE REAL RISE</div>
     <div class="tagline">Built from hustle. Powered by vision.</div>
-  </div>
+  </section>
 
-  <div class="features">
-    <div class="feature-box"><div class="feature-title">MOTIVATION CORNER</div></div>
-    <div class="feature-box"><div class="feature-title">HUSTLE ACADEMY</div></div>
-    <div class="feature-box"><div class="feature-title">DESIGN SERVICES</div></div>
-  </div>
+  <section class="buttons">
+    <button class="button">MOTIVATION CORNER</button>
+    <button class="button">HUSTLE ACADEMY</button>
+    <button class="button">DESIGN SERVICES</button>
+  </section>
 </body>
 </html>
