@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>THE REAL RISE</title>
   <style>
     * {
@@ -13,117 +13,96 @@
     }
 
     body {
-      background: url('https://images.unsplash.com/photo-1508264165352-258db2ebd59b') no-repeat center center/cover;
-      color: #fff;
+      background: url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0d3') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      position: relative;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: 1;
-    }
-
-    .content {
-      position: relative;
-      z-index: 2;
       padding: 20px;
+      text-align: center;
     }
 
-    .logo {
-      width: 100px;
+    .header {
       margin-bottom: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
     }
 
-    .intro {
-      margin-bottom: 40px;
+    .small-text {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 5px;
     }
 
-    .intro .welcome {
-      font-size: 1.2rem;
-      color: #ccc;
-      margin-bottom: 10px;
-    }
-
-    .intro .title {
+    .title {
       font-size: 3rem;
       font-weight: bold;
-      color: #FFD700;
-      margin-bottom: 10px;
+      color: gold;
+      margin-bottom: 5px;
     }
 
-    .intro .tagline {
+    .tagline {
       font-size: 1rem;
       color: #ccc;
     }
 
     .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 10px;
       width: 100%;
-      max-width: 800px;
+      max-width: 1000px;
+      margin-top: 30px;
     }
 
     .feature-box {
-      background-color: #FFD700;
-      color: #fff;
+      min-width: 220px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border: 2px solid gold;
       padding: 20px;
-      border-radius: 30px;
-      transition: transform 0.3s, background-color 0.3s;
-      cursor: pointer;
+      border-radius: 25px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
     }
 
     .feature-box:hover {
-      transform: translateY(-5px);
-      background-color: #e6c200;
+      transform: translateY(-8px);
     }
 
     .feature-title {
-      font-size: 1.2rem;
+      color: white;
+      font-size: 1.3rem;
       font-weight: bold;
     }
 
-    @media (max-width: 768px) {
-      .intro .title {
-        font-size: 2rem;
+    @media (orientation: portrait) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature-box {
+        width: 90%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-  <div class="content">
-    <img src="your-logo-file.png" alt="The Real Rise Logo" class="logo" />
-    <div class="intro">
-      <div class="welcome">Welcome to</div>
-      <div class="title">THE REAL RISE</div>
-      <div class="tagline">Built from hustle. Powered by vision.</div>
-    </div>
-    <div class="features">
-      <div class="feature-box">
-        <div class="feature-title">MOTIVATION CORNER</div>
-      </div>
-      <div class="feature-box">
-        <div class="feature-title">HUSTLE ACADEMY</div>
-      </div>
-      <div class="feature-box">
-        <div class="feature-title">DESIGN SERVICES</div>
-      </div>
-      <div class="feature-box">
-        <div class="feature-title">EGG BUSINESS</div>
-      </div>
-    </div>
+  <div class="header">
+    <div class="small-text">Welcome to</div>
+    <div class="title">THE REAL RISE</div>
+    <div class="tagline">Built from hustle. Powered by vision.</div>
+  </div>
+
+  <div class="features">
+    <div class="feature-box"><div class="feature-title">MOTIVATION CORNER</div></div>
+    <div class="feature-box"><div class="feature-title">HUSTLE ACADEMY</div></div>
+    <div class="feature-box"><div class="feature-title">DESIGN SERVICES</div></div>
+    <div class="feature-box"><div class="feature-title">EGG BUSINESS</div></div>
   </div>
 </body>
 </html>
