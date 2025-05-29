@@ -1,80 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE REAL RISE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* [Same CSS you already had — unchanged] */
-        /* Paste all your original CSS styles here — no need to repeat them unless changed */
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE REAL RISE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.92)),
+        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1740&q=80');
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    .logo-image {
+      width: 500px;
+      max-width: 80%;
+      margin: 0 auto 15px;
+      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
+    }
+
+    .welcome {
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      margin-bottom: 5px;
+      color: #f0f0f0;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .main-title {
+      font-size: 3.8rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 15px;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-bottom: 60px;
+      color: #d0d0d0;
+      text-align: center;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .tagline span {
+      display: block;
+      margin-top: 8px;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .feature-box {
+      background: linear-gradient(145deg, #d4af37, #f9e076);
+      border-radius: 100px;
+      padding: 25px 40px;
+      text-align: center;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+      position: relative;
+      overflow: hidden;
+      min-width: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.6);
+    }
+
+    .feature-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 200%; height: 200%;
+      background: rgba(255, 255, 255, 0.13);
+      transform: rotate(30deg);
+      transition: all 0.6s ease;
+    }
+
+    .feature-box:hover::before {
+      left: 150%;
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+      padding: 0 10px;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      letter-spacing: 1px;
+      font-family: 'Raleway', sans-serif;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+      max-width: 800px;
+    }
+
+    @media (max-width: 900px) {
+      .logo-image { width: 400px; }
+      .welcome { font-size: 1.5rem; }
+      .main-title { font-size: 3rem; }
+      .feature-box { min-width: 220px; padding: 20px 30px; }
+    }
+
+    @media (max-width: 600px) {
+      .logo-image { width: 300px; }
+      .welcome { font-size: 1.3rem; }
+      .main-title { font-size: 2.2rem; }
+      .tagline { font-size: 1rem; margin-bottom: 40px; }
+      .feature-box { min-width: 100%; padding: 25px 20px; }
+      .feature-title { font-size: 1.3rem; }
+      .features { gap: 20px; }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .feature-box {
+      animation: float 4s ease-in-out infinite;
+    }
+    .feature-box:nth-child(2) { animation-delay: 0.5s; }
+    .feature-box:nth-child(3) { animation-delay: 1s; }
+  </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="glow"></div>
-    <div class="particles" id="particles"></div>
-
-    <div class="container">
-        <div class="logo-container">
-            <img src="logo.png" alt="THE REAL RISE Logo" class="logo-image">
-            <div class="welcome">WELCOME TO</div>
-            <div class="main-title">THE REAL RISE</div>
-        </div>
-
-        <div class="tagline">
-            Built from hustle.<span>Powered by vision.</span>
-        </div>
-
-        <div class="features">
-            <a href="motivation-corner.html" class="feature-box">
-                <div class="feature-title">MOTIVATION CORNER</div>
-            </a>
-            <a href="hustle-academy.html" class="feature-box">
-                <div class="feature-title">HUSTLE ACADEMY</div>
-            </a>
-            <a href="design-services.html" class="feature-box">
-                <div class="feature-title">DESIGN SERVICES</div>
-            </a>
-        </div>
-
-        <div class="footer">
-            &copy; 2023 THE REAL RISE. ALL RIGHTS RESERVED.
-        </div>
+  <div class="background"></div>
+  <div class="container">
+    <div class="logo-container">
+      <img src="logo.png" alt="THE REAL RISE Logo" class="logo-image">
+      <div class="welcome">WELCOME TO</div>
+      <div class="main-title">THE REAL RISE</div>
     </div>
 
-    <script>
-        // Enhanced hover effect for boxes
-        document.addEventListener('DOMContentLoaded', function() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
+    <div class="tagline">
+      Built from hustle.<span>Powered by vision.</span>
+    </div>
 
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
+    <div class="features">
+      <a href="motivation-corner.html" class="feature-box">
+        <div class="feature-title">MOTIVATION CORNER</div>
+      </a>
+      <a href="hustle-academy.html" class="feature-box">
+        <div class="feature-title">HUSTLE ACADEMY</div>
+      </a>
+      <a href="design-services.html" class="feature-box">
+        <div class="feature-title">DESIGN SERVICES</div>
+      </a>
+    </div>
 
-                // Random position
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                particle.style.left = `${posX}%`;
-                particle.style.top = `${posY}%`;
-
-                // Random size
-                const size = Math.random() * 3 + 1;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-
-                // Random animation duration
-                const duration = Math.random() * 10 + 10;
-                particle.style.animationDuration = `${duration}s`;
-
-                // Random delay
-                const delay = Math.random() * 5;
-                particle.style.animationDelay = `${delay}s`;
-
-                particlesContainer.appendChild(particle);
-            }
-        });
-    </script>
+    <div class="footer">
+      &copy; 2023 THE REAL RISE. ALL RIGHTS RESERVED.
+    </div>
+  </div>
 </body>
 </html>
